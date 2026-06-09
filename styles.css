@@ -1,0 +1,414 @@
+:root {
+  --bg: #313338;
+  --sidebar: #2b2d31;
+  --card: #1e1f22;
+  --accent: #5865f2;
+  --text: #f2f3f5;
+  --muted: #b5bac1;
+  --line: #404249;
+  --success: #23a559;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 28px 18px;
+  background: var(--sidebar);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.profile-label,
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.profile h1,
+.topbar h2,
+.hero h2,
+.section-heading h2,
+.section-heading h3 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.nav-list {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  background: rgba(88, 101, 242, 0.18);
+  color: var(--text);
+}
+
+.sidebar-note {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(30, 31, 34, 0.72);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--success);
+}
+
+.main-content {
+  min-width: 0;
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-copy {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.page-section {
+  display: none;
+}
+
+.page-section.is-visible {
+  display: block;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+
+.hero-copy,
+.summary-grid,
+.project-card,
+.log-card,
+.upload-panel,
+.document-item {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.hero-copy {
+  padding: 28px;
+}
+
+.hero-copy h2 {
+  margin-top: 8px;
+  font-size: 42px;
+}
+
+.hero-copy p:last-child {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.summary-grid {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.summary-grid div {
+  padding: 18px;
+  background: var(--card);
+}
+
+.summary-grid dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.summary-grid dd {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.content-block {
+  margin-top: 28px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.section-heading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.project-card h3 {
+  margin: 0 0 8px;
+}
+
+.project-card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: auto 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(88, 101, 242, 0.16);
+  color: #dfe3ff;
+  font-size: 12px;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.text-link {
+  color: #c9d0ff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+  max-width: 840px;
+}
+
+.log-card {
+  padding: 18px;
+}
+
+.log-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.log-card p {
+  margin: 0;
+}
+
+.upload-panel {
+  max-width: 840px;
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.upload-panel label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.upload-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+button {
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.upload-panel p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.document-list {
+  display: grid;
+  gap: 12px;
+  max-width: 840px;
+}
+
+.document-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.document-item strong {
+  display: block;
+}
+
+.document-item span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+
+  .hero,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .upload-row,
+  .document-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .main-content,
+  .sidebar {
+    padding: 18px;
+  }
+
+  .nav-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-copy h2 {
+    font-size: 34px;
+  }
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ユ | 学習ポートフォリオ</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="サイト内ナビゲーション">
+        <div class="profile">
+          <div class="avatar" aria-hidden="true">ユ</div>
+          <div>
+            <p class="profile-label">System Engineer Portfolio</p>
+            <h1>ユ</h1>
+          </div>
+        </div>
+
+        <!-- data-section の値と section の id を合わせると、JavaScriptで画面を切り替えやすくなります。 -->
+        <nav class="nav-list" aria-label="主要ページ">
+          <a class="nav-link is-active" href="#home" data-section="home">ホーム</a>
+          <a class="nav-link" href="#projects" data-section="projects">成果物</a>
+          <a class="nav-link" href="#logs" data-section="logs">学習記録</a>
+          <a class="nav-link" href="#documents" data-section="documents">資料</a>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="status-dot"></span>
+          就職活動に向けて更新中
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Learning Archive</p>
+            <h2 id="page-title">ホーム</h2>
+          </div>
+          <p class="topbar-copy">学習、制作物、資料をひとつの場所で整理するポートフォリオ。</p>
+        </header>
+
+        <section class="page-section is-visible" id="home" aria-labelledby="home-title">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Handle Name</p>
+              <h2 id="home-title">ユ</h2>
+              <p>
+                システムエンジニアを目指して、Web開発、設計、データベース、チーム開発の学習を続けています。
+                このサイトでは、学習の流れと成果物を後から振り返りやすい形で記録します。
+              </p>
+            </div>
+            <dl class="summary-grid" aria-label="ポートフォリオ概要">
+              <div>
+                <dt>主な関心</dt>
+                <dd>Webアプリ / 業務改善 / 設計</dd>
+              </div>
+              <div>
+                <dt>現在の重点</dt>
+                <dd>HTML・CSS・JavaScriptの基礎固め</dd>
+              </div>
+              <div>
+                <dt>目標</dt>
+                <dd>実務で読まれる成果物の整理</dd>
+              </div>
+            </dl>
+          </div>
+
+          <section class="content-block" aria-labelledby="featured-title">
+            <div class="section-heading">
+              <h3 id="featured-title">注目成果物</h3>
+              <p>就職活動で特に見せたい制作物を固定表示できます。</p>
+            </div>
+            <div class="card-grid" id="featured-projects"></div>
+          </section>
+        </section>
+
+        <section class="page-section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <h2 id="projects-title">成果物</h2>
+            <p>タイトル、概要、技術、リンクをカード形式で整理します。</p>
+          </div>
+          <div class="card-grid" id="project-list"></div>
+        </section>
+
+        <section class="page-section" id="logs" aria-labelledby="logs-title">
+          <div class="section-heading">
+            <h2 id="logs-title">学習記録</h2>
+            <p>Xのポストのように、短い学習ログを時系列で残します。</p>
+          </div>
+          <div class="timeline" id="learning-logs"></div>
+        </section>
+
+        <section class="page-section" id="documents" aria-labelledby="documents-title">
+          <div class="section-heading">
+            <h2 id="documents-title">資料</h2>
+            <p>PDF、設計書、メモを一覧管理します。アップロードしたファイルはブラウザ上で一時表示されます。</p>
+          </div>
+
+          <!-- 現時点ではファイルをサーバーに保存せず、選択したファイル名だけを一覧に追加します。 -->
+          <form class="upload-panel" id="upload-form">
+            <label for="document-upload">資料を追加</label>
+            <div class="upload-row">
+              <input id="document-upload" name="document-upload" type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.md" />
+              <button type="submit">一覧に追加</button>
+            </div>
+            <p>本格的な保存機能は、将来バックエンドやクラウドストレージを追加する想定です。</p>
+          </form>
+
+          <div class="document-list" id="document-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
