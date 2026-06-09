@@ -5,7 +5,7 @@
 ```text
 outputs/
   index.html   # ページ構造
-  styles.css   # Discord風ダークテーマの見た目
+  styles.css   # ダークテーマの見た目
   script.js    # 表示データ、画面切り替え、資料アップロード表示
   README.md    # 構成メモ
 ```
@@ -16,14 +16,6 @@ outputs/
 - `Topbar`: 現在ページのタイトルとサイト説明
 - `Home`: 自己紹介、概要、注目成果物
 - `ProjectCard`: 成果物カード
-- `LearningLog`: X風の短文学習記録
+- `LearningLog`: 短文学習記録
 - `DocumentList`: 資料一覧
 - `UploadPanel`: 資料ファイルの一時追加フォーム
-
-## 将来拡張しやすい点
-
-- 成果物、学習記録、資料は `script.js` の配列で管理しています。
-- GitHub API連携を追加する場合は、`projects` の描画部分をAPI取得に差し替えられます。
-- タグ検索や全文検索は、配列データを絞り込む関数を追加するだけで拡張できます。
-- 多言語対応は、表示文言を別オブジェクトに切り出すと対応しやすくなります。
-- ダーク・ライトモードは、CSS変数を切り替えることで実装できます。
